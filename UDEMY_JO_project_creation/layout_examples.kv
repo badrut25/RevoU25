@@ -1,0 +1,131 @@
+<LayoutExamplesTabs@TabbedPanel>:
+    do_default_tab: False
+    TabbedPanelItem:
+        text: "Widget"
+        MainWidget:
+    TabbedPanelItem:
+        text: "BoxLayout"
+        BoxLayoutExample:
+    TabbedPanelItem:
+        text: "AnchorLayout"
+        AnchorLayoutExample:
+    TabbedPanelItem:
+        text: "GridLayout"
+        GridLayoutExample:
+    TabbedPanelItem:
+        text: "PageLayout"
+        PageLayoutExample:
+    TabbedPanelItem:
+        text: "ScrollView"
+        ScrollViewExample:
+    TabbedPanelItem:
+        text: "StackLayout"
+        StackLayoutExample:
+
+<PageLayoutExample@PageLayout>:
+    MainWidget:
+    BoxLayoutExample:
+    AnchorLayoutExample:
+    GridLayoutExample:
+
+<ScrollViewExample@ScrollView>:
+    StackLayoutExample:
+        size_hint : 1, None
+        height: self.minimum_height #2500
+
+<StackLayoutExample>:
+    #left-right     top-bottom
+    #l    r         t   b
+    # orientation: "rl-tb"
+    padding: ("20dp", "20dp", "20dp", "20dp")
+    spacing: "20dp", "20dp"
+    # Button:
+    #     text: "A"
+    #     size_hint : 0.2, 0.2
+    # Button:
+    #     text: "B"
+    #     size_hint : 0.2, 0.2
+    # Button:
+    #     text: "C"
+    #     size_hint : 0.2, 0.2
+    
+
+<GridLayoutExample@GridLayout>:
+    #rows
+    #cols
+    #cols : 2
+    rows : 2
+    Button:
+        text: "A"
+        size_hint : None, 1 #"60dp"
+        width : "60dp"
+    BoxLayoutExample:
+    Button:
+        text: "B"
+    Button:
+        text: "C"
+    Button:
+        text: "D"
+        size_hint : None, 1 #"60dp"
+        width : "60dp"
+    Button:
+        text: "E"
+    Button:
+        text: "F"
+
+<AnchorLayoutExample>:
+    #right, left, center
+    anchor_x : "left" 
+    #bottom, top, center
+    anchor_y : "top"
+    BoxLayout:
+        size_hint : 0.2, 0.2
+        Button:
+            text: "A"
+        Button:
+            text: "B"
+        Button:
+            text: "C"
+
+<BoxLayoutExample>:
+    orientation: "horizontal" #"vertical"
+    Button:
+        text : "A"
+        color: 1, 1, 0, 1
+        size_hint : 0.5, 0.5 #None, None #1, 0.5
+        #size : "100dp", "60dp" #P x L
+        # width : "650dp"
+        # height : "60dp"
+        pos_hint : {"center_y" : 0.5}   #x, center_x, right #y, center_y, top
+    BoxLayout:
+        orientation: "vertical" 
+        spacing : "10dp"
+        Button:
+            text : "B1"
+            color: 0, 1, 0, 1
+            # size_hint : 1, 2
+        Button:
+            text : "B2"
+            color: 0, 1, 0, 1
+        Button:
+            text : "B3"
+            color: 0, 1, 0, 1
+        Button:
+            text : "B3"
+            color: 0, 1, 0, 1
+    Label:
+        text : "C"
+        color: 0, 1, 1, 1
+        # size_hint : 1, 1
+
+<MainWidget>:
+    Button:
+        text : "Hello"
+        size : "100dp", "80dp" #100, 100        #pixel
+        pos  : "100dp", "200dp" #300, 500        #pixel
+        color: 0, 1, 0, 1
+    Label:
+        text : "Hello 2"
+        size : "100dp", "80dp"
+        pos  : "200dp", "300dp"
+        color: 1, 0, 0, 1

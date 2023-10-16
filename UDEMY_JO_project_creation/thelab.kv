@@ -1,0 +1,81 @@
+#this is for graphical code
+
+#:import layout_examples layout_examples
+#:import widget_examples widget_examples
+#:import navigation_screen_manager navigation_screen_manager
+#:import boxlayout_with_action_bar boxlayout_with_action_bar
+
+# MainWidget:
+# BoxLayoutExample:
+# AnchorLayoutExample:
+# GridLayoutExample:
+# StackLayoutExample:
+# ScrollViewExample:
+# PageLayoutExample:
+# WidgetExample:
+# ImageExample:
+# MyScreenManager:
+MainMenu:
+
+<MainMenu@BoxLayout>:
+    #Layouts -> PageLayoutExample
+    #Widgets
+    #Images
+    orientation: "vertical"
+    Button:
+        text: "Go to screen Layouts"
+        on_press: app.manager.push("LayoutExamplesTabs")
+    Button:
+        text: "Go to screen Widget"
+        on_press: app.manager.push("WidgetExample")
+    Button:
+        text: "Go to screen Images"
+        on_press: app.manager.push("ImageExample")
+
+# <MyScreenManager@NavigationScreenManager>:
+<MyScreenManager>:
+    Screen:
+        name: "MainMenu"
+        MainMenu:
+    # Screen:
+    #     name: "Screen 1"
+    #     BoxLayout:
+    #         # orientation: "vertical"
+    #         Button:
+    #             text: "Go to screen Image"
+    #             # on_press: root.transition.direction = "left" ; root.current = "Screen 3"
+    #             # on_press: root.push("ImageExample")
+    #             on_press: app.manager.push("ImageExample")
+    #         Button:
+    #             text: "Go to screen 3"
+    #             # on_press: root.push("Screen 3")
+    #             on_press: app.manager.push("Screen 3")
+    Screen:
+        name: "LayoutExamplesTabs"
+        BoxLayoutWithActionBar:
+            title: "Layouts"
+            # PageLayoutExample:
+            LayoutExamplesTabs:
+    Screen:
+        name: "WidgetExample"
+        BoxLayoutWithActionBar:
+            title: "Widget"
+            WidgetExample:
+    Screen:
+        name: "ImageExample"
+        BoxLayoutWithActionBar:
+            title: "images"
+            ImageExample:
+    # Screen:
+    #     name: "Screen 2"
+    #     Button:
+    #         text: "Button 2"
+    #         # on_press: root.transition.direction = "right" ; root.current = root.previous()
+    #         on_press: root.pop()
+    # Screen:
+    #     name: "Screen 3"
+    #     Button:
+    #         text: "Button 3"
+    #         # on_press: root.transition.direction = "right" ; root.current = root.previous()
+    #         on_press: root.pop()
+

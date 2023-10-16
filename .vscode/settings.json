@@ -1,0 +1,10 @@
+{
+    "vsmqtt.brokerProfiles": [
+        {
+            "name": "MQTT_FD",
+            "host": "158.140.163.173",
+            "port": 1883,
+            "clientId": "vsmqtt_client"
+        }
+    ]
+}
